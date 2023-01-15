@@ -1,0 +1,26 @@
+<div class="band-body">
+  <div class="row">
+    <div class="col-md-3 mb-3" *ngFor="let band of bands; index as i">
+      <h2>Band {{i+1}}</h2>
+      <form [formGroup]="bandForm" (ngSubmit)="submitForm()">
+        <div class="form-body">
+          <div class="form-group">
+            <label for="buy">Buy</label>
+            <input type="number" class="form-control" formControlName="buy" [(ngModel)]="band.buy"/>
+          </div>
+          <div class="form-group">
+            <label for="sqOff">Square Off</label>
+            <input type="number" class="form-control" formControlName="sqOff" [(ngModel)]="band.squareOff"/>
+          </div>
+          <div class="form-group">
+            <label for="sell">Sell</label>
+            <input type="number" class="form-control" formControlName="sell" [(ngModel)]="band.sell"/>
+          </div>
+        </div>
+        <button class="btn btn-success">
+          Save
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
